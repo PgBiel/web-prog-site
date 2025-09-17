@@ -29,7 +29,7 @@
           default = pkgs.mkShell {
             packages = with pkgs; [
               # Add development environment packages here
-              python3
+              python311
               uv
             ];
           };
