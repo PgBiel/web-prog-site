@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Just Post{% endblock %}</title>
+</head>
+<body>
+    <nav>
+        <a href="{% url 'posts:post-list' %}">Home</a>
+        {% if user.is_authenticated %}
+            <span>Bem-vindo, {{ user.username }}!</span>
+            <a href="{% url 'posts:post-create' %}">Criar Post</a>
+            <a href="#">Logout</a>
+        {% else %}
+            <a href="#">Login</a>
+            <a href="#">Registrar</a>
+        {% endif %}
+    </nav>
+    <hr>
+    {% block content %}{% endblock content %}
+</body>
+</html>

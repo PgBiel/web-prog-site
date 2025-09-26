@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div>
+        <h2>{{ object.titulo }}</h2>
+        <p>por {{ object.autor.username }} em {{ object.data_criacao|date:"d/m/Y" }}</p>
+
+        <div>{{ object.conteudo }}</div>
+    </div>
+
+    {% if user == object.autor %}
+        <hr>
+        <a href="{% url 'posts:post-edit' pk=object.pk %}">Editar Post</a>
+        <a href="{% url 'posts:post-delete' pk=object.pk %}">Deletar Post</a>
+    {% endif %}
+{% endblock content %}

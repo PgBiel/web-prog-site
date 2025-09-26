@@ -9,5 +9,8 @@ class Post(models.Model):
     data_criacao = models.DateTimeField(auto_now_add=True)
     data_atualizacao = models.DateTimeField(auto_now=True)
 
+    class Meta:
+        ordering = ['-data_criacao']
+
     def __str__(self):
         return self.titulo
