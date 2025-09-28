@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,11 +6,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}JustPost{% endblock %}</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.amber.min.css">
+    <link rel="shortcut icon" type="image/svg+xml" href="{% static 'justpost/logo.svg' %}" >
+    <style>
+        .logo {
+            display: inline;
+            height: 2rem;
+            margin: 0rem 0.2rem;
+        }
+    </style>
 </head>
 <body>
     <nav class="container">
         <ul>
-            <li><strong>JustPost</strong></li>
+            <li>
+                <img class="logo" src="{% static 'justpost/logo.svg' %}" alt="JustPost logo">
+                <strong>JustPost</strong>
+            </li>
         </ul>
         <ul>
             <li><a href="{% url 'posts:post-list' %}">Home</a></li>
