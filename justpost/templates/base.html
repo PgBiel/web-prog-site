@@ -4,20 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}Just Post{% endblock %}</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.amber.min.css">
 </head>
 <body>
-    <nav>
-        <a href="{% url 'posts:post-list' %}">Home</a>
-        {% if user.is_authenticated %}
-            <span>Bem-vindo, {{ user.username }}!</span>
-            <a href="{% url 'posts:post-create' %}">Criar Post</a>
-            <a href="#">Logout</a>
-        {% else %}
-            <a href="#">Login</a>
-            <a href="#">Registrar</a>
-        {% endif %}
+    <nav class="container">
+        <ul>
+            <li><strong>JustPost</strong></li>
+        </ul>
+        <ul>
+            <li><a href="{% url 'posts:post-list' %}">Home</a></li>
+            {% if user.is_authenticated %}
+                <li><a href="{% url 'posts:post-create' %}">Criar Post</a></li>
+                <li><a href="#">Logout</a></li>
+                <li>
+                    <span>{{ user.username }}</span>
+                </li>
+            {% else %}
+                <li><a href="#">Login</a></li>
+                <li><a href="#">Registrar</a></li>
+            {% endif %}
+        </ul>
     </nav>
     <hr>
-    {% block content %}{% endblock content %}
+    <main class="container">
+        {% block content %}{% endblock content %}
+    </main>
 </body>
 </html>
