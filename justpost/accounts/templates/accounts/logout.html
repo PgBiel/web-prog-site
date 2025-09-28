@@ -1,0 +1,7 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <b>Você fez logout com sucesso.</b>
+    <br/>
+    <a href="{% url 'posts:post-list' %}" role="button">Voltar</a>
+{% endblock content %}

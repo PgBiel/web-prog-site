@@ -27,13 +27,16 @@
             <li><a href="{% url 'posts:post-list' %}">Home</a></li>
             {% if user.is_authenticated %}
                 <li><a href="{% url 'posts:post-create' %}">Criar Post</a></li>
-                <li><a href="#">Logout</a></li>
+                <li><form action="{% url 'accounts:logout' %}" method="POST">
+                    {% csrf_token %}
+                    <input type="submit" value="Logout">
+                </form></li>
                 <li>
                     <span>{{ user.username }}</span>
                 </li>
             {% else %}
-                <li><a href="#">Login</a></li>
-                <li><a href="#">Registrar</a></li>
+                <li><a href="{% url 'accounts:login' %}">Login</a></li>
+                <li><a href="{% url 'accounts:new' %}">Registrar</a></li>
             {% endif %}
         </ul>
     </nav>
