@@ -27,6 +27,7 @@
             <li><a href="{% url 'posts:post-list' %}">Home</a></li>
             {% if user.is_authenticated %}
                 <li><a href="{% url 'posts:post-create' %}">Criar Post</a></li>
+                <li><a href="{% url 'accounts:password_change' %}">Trocar Senha</a></li>
                 <li><form action="{% url 'accounts:logout' %}" method="POST">
                     {% csrf_token %}
                     <input type="submit" value="Logout">
