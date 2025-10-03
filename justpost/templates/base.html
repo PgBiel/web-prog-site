@@ -6,26 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}JustPost{% endblock %}</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.amber.min.css">
-    <link rel="shortcut icon" type="image/svg+xml" href="{% static 'justpost/logo.svg' %}" >
-    <style>
-        .logo {
-            display: inline;
-            height: 2rem;
-            margin: 0rem 0.2rem;
-        }
-        details.dropdown > .fit[dir="rtl"] {
-            position: absolute;
-            left: auto;
-            right: initial;
-            width: initial;
-        }
-    </style>
+    <link rel="shortcut icon" type="image/svg+xml" href="{% static 'justpost/img/logo.svg' %}" >
+    <link rel="stylesheet" href="{% static 'justpost/css/style.css' %}">
 </head>
 <body>
     <nav class="container">
         <ul>
             <li>
-                <img class="logo" src="{% static 'justpost/logo.svg' %}" alt="JustPost logo">
+                <img class="logo" src="{% static 'justpost/img/logo.svg' %}" alt="JustPost logo">
                 <strong>JustPost</strong>
             </li>
         </ul>
