@@ -14,7 +14,7 @@ class UserCreateView(CreateView):
     template_name = "accounts/signup_form.html"
 
     def get_success_url(self):
-        return reverse_lazy('posts:post-list')
+        return reverse_lazy('accounts:login')
 
 class UserLoginView(LoginView):
     """User login view"""
