@@ -13,6 +13,12 @@
             height: 2rem;
             margin: 0rem 0.2rem;
         }
+        details.dropdown > .fit[dir="rtl"] {
+            position: absolute;
+            left: auto;
+            right: initial;
+            width: initial;
+        }
     </style>
 </head>
 <body>
@@ -27,13 +33,19 @@
             <li><a href="{% url 'posts:post-list' %}">Home</a></li>
             {% if user.is_authenticated %}
                 <li><a href="{% url 'posts:post-create' %}">Criar Post</a></li>
-                <li><a href="{% url 'accounts:password_change' %}">Trocar Senha</a></li>
-                <li><form action="{% url 'accounts:logout' %}" method="POST">
-                    {% csrf_token %}
-                    <input type="submit" value="Logout">
-                </form></li>
                 <li>
-                    <span>{{ user.username }}</span>
+                    <details class="dropdown">
+                        <summary>
+                            {{ user.username }}
+                        </summary>
+                        <ul dir="rtl" class="fit">
+                            <li><a href="{% url 'accounts:password_change' %}">Trocar Senha</a></li>
+                            <li><form action="{% url 'accounts:logout' %}" method="POST">
+                                {% csrf_token %}
+                                <input type="submit" value="Logout">
+                            </form></li>
+                        </ul>
+                    </details>
                 </li>
             {% else %}
                 <li><a href="{% url 'accounts:login' %}">Login</a></li>
