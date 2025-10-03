@@ -12,6 +12,10 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 
 from pathlib import Path
 
+import os
+
+ENVIRONMENT = os.getenv("DJANGO_ENVIRONMENT", "development")
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -23,9 +27,14 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = "django-insecure-2ygq-qgp_e(^xaudrzso)o*mw6nsi_&cb_=ebahl=9zi0j+7uz"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = ENVIRONMENT == "development"
 
-ALLOWED_HOSTS = []
+# Parse ALLOWED_HOSTS and CSRF_TRUSTED_ORIGINS from environment variables
+allowed_hosts_env = os.getenv("ALLOWED_HOSTS", "")
+ALLOWED_HOSTS = allowed_hosts_env.split(" ") if allowed_hosts_env else []
+
+csrf_trusted_origins_env = os.getenv("CSRF_TRUSTED_ORIGINS", "")
+CSRF_TRUSTED_ORIGINS = csrf_trusted_origins_env.split(" ") if csrf_trusted_origins_env else []
 
 
 # Application definition
@@ -117,7 +126,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.2/howto/static-files/
 
 STATIC_URL = "static/"
-
+STATIC_ROOT = os.getenvt("STATIC_ROOT", BASE_DIR / "staticfiles")
 STATICFILES_DIRS = [
     BASE_DIR / "static",
 ]
