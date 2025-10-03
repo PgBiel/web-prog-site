@@ -3,7 +3,8 @@
 {% block content %}
     <div>
         <h2>{{ object.titulo }}</h2>
-        <p>{{ object.autor.username }}<br>{{ object.data_criacao|date:"d/m/Y" }}</p>
+        <p>Por {{ object.autor.username }}<br>{{ object.data_criacao|date:"d/m/Y" }}</p>
+        <hr>
 
         <div>{{ rendered_post|safe }}</div>
     </div>
