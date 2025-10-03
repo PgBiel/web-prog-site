@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 """
 
 from pathlib import Path
+from django.forms.renderers import TemplatesSetting
 
 import os
 
@@ -46,6 +47,7 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    "django.forms",
     "accounts",
     "posts",
 ]
@@ -138,3 +140,10 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 # Email backend configuration for development
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+# Custom form template
+class CustomFormRenderer(TemplatesSetting):
+    pass
+
+
+FORM_RENDERER = "justpost.settings.CustomFormRenderer"
