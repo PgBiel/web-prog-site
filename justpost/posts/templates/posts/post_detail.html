@@ -5,7 +5,7 @@
         <h2>{{ object.titulo }}</h2>
         <p>por {{ object.autor.username }} em {{ object.data_criacao|date:"d/m/Y" }}</p>
 
-        <div>{{ object.conteudo }}</div>
+        <div>{{ rendered_post|safe }}</div>
     </div>
 
     {% if user == object.autor %}

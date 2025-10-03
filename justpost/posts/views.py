@@ -1,6 +1,7 @@
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.urls import reverse_lazy
 from django.views.generic import CreateView, DeleteView, DetailView, ListView, UpdateView
+from markdown_it import MarkdownIt
 
 from posts.models import Post
 from posts.forms import PostForm
@@ -18,6 +19,14 @@ class PostDetailView(DetailView):
     model = Post
     template_name = 'posts/post_detail.html'
     context_object_name = 'post'
+
+    def get_context_data(self, **kwargs):
+        base = super().get_context_data(**kwargs)
+        if "object" in base and hasattr(base["object"], "conteudo"):
+            base["rendered_post"] = MarkdownIt("js-default").render(base["object"].conteudo)
+        else:
+            base["rendered_post"] = ""
+        return base
 
 
 class PostCreateView(LoginRequiredMixin, CreateView):
