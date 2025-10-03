@@ -9,5 +9,6 @@
         </table>
         <button type="submit">Entrar</button>
     </form>
+    <p><a href="{% url 'accounts:new' %}">Não tenho uma conta</a></p>
     <p><a href="{% url 'accounts:password_reset' %}">Esqueceu sua senha?</a></p>
 {% endblock content %}
