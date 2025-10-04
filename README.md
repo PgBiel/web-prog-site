@@ -25,6 +25,7 @@ O **JustPost** é uma aplicação web construída com Python e Django que serve 
     * **Read:** Todos os visitantes podem visualizar a lista de posts e ler seu conteúdo completo.
     * **Update:** O autor de um post pode editá-lo após a publicação.
     * **Delete:** O autor de um post pode excluí-lo permanentemente.
+* **Formatação de posts:** O conteúdo de cada post é interpretado como Markdown ao ser exibido, permitindo diretivas de formatação como negrito e itálico.
 * **Controle de Permissões:** O sistema diferencia as ações disponíveis para visitantes, usuários logados e os autores dos posts, garantindo que apenas o autor possa modificar seu próprio conteúdo.
 
 ---
@@ -42,11 +43,12 @@ Este manual explica como utilizar as principais funcionalidades do JustPost.
 ### Fazendo Login e Logout
 
 * **Login:** Clique em **"Login"** na barra de navegação, insira seu nome de usuário e senha.
-* **Logout:** Se estiver logado, clique no botão **"Logout"** na barra de navegação.
+* **Logout:** Se estiver logado, clique no seu nome de usuário na barra de navegação no topo e clique no botão **"Logout"** no menu que aparece.
 
 ### Criando e Gerenciando Posts (CRUD)
 
 1.  **Create:** Estando logado, clique em **"Criar Post"**. Preencha o título e o conteúdo e clique em "Salvar". Você será redirecionado para a página do seu novo post.
+  - **Formatação:** Aqui, é possível o uso de formatação no conteúdo do post via **Markdown** (com a sintaxe de \*\*negrito\*\*, \_itálico\_ etc.).
 2.  **Read:** A página inicial exibe a lista de todos os posts. Clique no título de qualquer post para ler seu conteúdo completo.
 3.  **Update:** Na página de um post que você criou, um link **"Editar Post"** estará visível. Clique nele para modificar o título ou o conteúdo.
 4.  **Delete:** Na página de um post que você criou, clique no link **"Deletar Post"**. Uma página de confirmação será exibida. Clique em "Sim, deletar" para remover o post permanentemente.
@@ -71,6 +73,7 @@ Siga os passos abaixo para configurar e rodar o projeto em seu ambiente de desen
 * **Python 3.11+**
 * **Git** para clonar o repositório.
 * **uv**, um instalador e gerenciador de pacotes Python.
+  - Usado para instalação de dependências em `pyproject.toml` (`django`, `django-stubs` e `markdown-it-py`)
 
 Se você não tiver o `uv` instalado, instale-o com:
 ```bash
@@ -123,6 +126,12 @@ Esta seção detalha o status de cada funcionalidade implementada no projeto.
 
 * **Registro, Login e Logout de Usuários:** O ciclo completo de autenticação foi testado e está 100% funcional. Usuários podem se registrar, entrar e sair da plataforma sem problemas.
 * **Criação de Posts:** Usuários autenticados conseguem criar novos posts através do formulário, e os posts são corretamente associados ao autor.
+* **Formatação de Posts:** O conteúdo de cada post está no formato Markdown, que é interpretado no backend na visualização para produzir texto em negrito, itálico, subtítulos etc.
+* **Estilos e customização:** O site foi devidamente customizado com a ajuda do framework "pico.css".
+  * Customizações incluem:
+    - **Página 404 (Not Found)** própria ao acessar um link inválido;
+    - **Formulários customizados**, alterando o template do Django;
+    - Barra de navegação própria.
 * **Visualização de Posts:** A lista de posts na página inicial e a página de detalhes de cada post estão funcionando como esperado para todos os tipos de usuário (visitantes e logados).
 * **Edição e Deleção de Posts:** Apenas o autor original de um post consegue ver os botões de "Editar" e "Deletar" e acessar as respectivas páginas. A atualização e a exclusão no banco de dados funcionam corretamente.
 * **Troca de Senha (Logado):** O formulário de troca de senha funciona, exigindo a senha antiga e validando a nova senha.
