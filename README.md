@@ -17,6 +17,8 @@ Um site simples que permite postagem por usuários sobre diversos temas, em gera
 
 O **JustPost** é uma aplicação web construída com Python e Django que serve como uma plataforma de blog simplificada. O projeto foi desenvolvido para aplicar conceitos de desenvolvimento web backend, incluindo operações de banco de dados, autenticação de usuários e renderização de templates no lado do servidor, sem o uso de JavaScript.
 
+**Autores:** Gabriel Moreira, Luiz Augusto Papa
+
 ### Funcionalidades Principais
 
 * **Autenticação Completa:** Sistema de registro, login, logout, troca de senha e recuperação de senha por e-mail.
