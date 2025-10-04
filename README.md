@@ -141,3 +141,4 @@ Esta seção detalha o status de cada funcionalidade implementada no projeto.
 ### ❌ O que Não Funcionou (ou Problemas Conhecidos)
 
 * **Recuperação de Senha por E-mail:** O fluxo de recuperação de senha funciona no ambiente de desenvolvimento (com o e-mail sendo impresso no console), mas **não foi configurado um servidor de e-mail SMTP para produção**. Portanto, no site publicado, a funcionalidade não enviará e-mails reais.
+  - Enfatize-se que a recuperação de senha **funciona** ao seguir o link impresso no console. Porém, o email com o link não será enviado de fato.
