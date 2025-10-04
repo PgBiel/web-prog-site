@@ -129,11 +129,13 @@ Esta seção detalha o status de cada funcionalidade implementada no projeto.
 * **Registro, Login e Logout de Usuários:** O ciclo completo de autenticação foi testado e está 100% funcional. Usuários podem se registrar, entrar e sair da plataforma sem problemas.
 * **Criação de Posts:** Usuários autenticados conseguem criar novos posts através do formulário, e os posts são corretamente associados ao autor.
 * **Formatação de Posts:** O conteúdo de cada post está no formato Markdown, que é interpretado no backend na visualização para produzir texto em negrito, itálico, subtítulos etc.
-* **Estilos e customização:** O site foi devidamente customizado com a ajuda do framework "pico.css".
-  * Customizações incluem:
+* **Estilos e customização:** O site foi devidamente estilizado e customizado com a ajuda do framework "pico.css".
+  * O site possui um _dark mode_ e um _light mode_ de ajuste automático conforme as preferências do sistema do usuário.
+  * Customizações notáveis incluem:
     - **Página 404 (Not Found)** própria ao acessar um link inválido;
     - **Formulários customizados**, alterando o template do Django;
-    - Barra de navegação própria.
+    - Barra de navegação própria, com menu para usuário logado;
+    - Uso de logo como favicon do site.
 * **Visualização de Posts:** A lista de posts na página inicial e a página de detalhes de cada post estão funcionando como esperado para todos os tipos de usuário (visitantes e logados).
 * **Edição e Deleção de Posts:** Apenas o autor original de um post consegue ver os botões de "Editar" e "Deletar" e acessar as respectivas páginas. A atualização e a exclusão no banco de dados funcionam corretamente.
 * **Troca de Senha (Logado):** O formulário de troca de senha funciona, exigindo a senha antiga e validando a nova senha.
