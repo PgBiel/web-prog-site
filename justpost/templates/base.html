@@ -30,7 +30,7 @@
                             <li><a href="{% url 'accounts:password_change' %}">Trocar Senha</a></li>
                             <li><form action="{% url 'accounts:logout' %}" method="POST">
                                 {% csrf_token %}
-                                <input type="submit" value="Logout">
+                                <input type="submit" class="contrast" value="Logout">
                             </form></li>
                         </ul>
                     </details>
