@@ -50,7 +50,7 @@ Este manual explica como utilizar as principais funcionalidades do JustPost.
 ### Criando e Gerenciando Posts (CRUD)
 
 1.  **Create:** Estando logado, clique em **"Criar Post"**. Preencha o título e o conteúdo e clique em "Salvar". Você será redirecionado para a página do seu novo post.
-  - **Formatação:** Aqui, é possível o uso de formatação no conteúdo do post via **Markdown** (com a sintaxe de \*\*negrito\*\*, \_itálico\_ etc.).
+    - **Formatação:** Aqui, é possível o uso de formatação no conteúdo do post via **Markdown** (com a sintaxe de \*\*negrito\*\*, \_itálico\_ etc.).
 2.  **Read:** A página inicial exibe a lista de todos os posts. Clique no título de qualquer post para ler seu conteúdo completo.
 3.  **Update:** Na página de um post que você criou, um link **"Editar Post"** estará visível. Clique nele para modificar o título ou o conteúdo.
 4.  **Delete:** Na página de um post que você criou, clique no link **"Deletar Post"**. Uma página de confirmação será exibida. Clique em "Sim, deletar" para remover o post permanentemente.
