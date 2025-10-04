@@ -5,13 +5,9 @@ from posts.models import Post
 
 
 class SignupForm(UserCreationForm):
-    # class Meta:
-    #     model = User
-    #     fields = ["username", "email", "password"]
-    #     widgets = {
-    #         "password": forms.PasswordInput(),
-    #     }
-    pass
+    class Meta:
+        model = User
+        fields = ("username", "email", "password1", "password2")
 
 class LoginForm(AuthenticationForm):
     # class Meta:
