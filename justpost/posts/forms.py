@@ -12,3 +12,6 @@ class PostForm(forms.ModelForm):
             "titulo": _("Título"),
             "conteudo": _("Conteúdo"),
         }
+        help_texts = {
+            "conteudo": _("Formatação com <strong>**Markdown**</strong> está <em>_disponível,_</em> experimente!")
+        }
